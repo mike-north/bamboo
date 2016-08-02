@@ -39,7 +39,10 @@ defmodule Bamboo.Mixfile do
     [
       maintainers: ["Paul Smith"],
       licenses: ["MIT"],
-      links: %{"GitHub" => @project_url}
+      links: %{
+        "GitHub" => @project_url,
+        "Made by thoughtbot" => "https://thoughtbot.com/services/elixir-phoenix",
+      }
     ]
   end
 
