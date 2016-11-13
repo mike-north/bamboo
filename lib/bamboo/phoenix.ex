@@ -264,7 +264,6 @@ defmodule Bamboo.Phoenix do
     end
   end
 
-  if Code.ensure_loaded?(Phoenix.View) do
     defp render_html(email, template) do
       # Phoenix uses the assigns.layout to determine what layout to use
       assigns = Map.put(email.assigns, :layout, email.private.html_layout)
@@ -285,13 +284,6 @@ defmodule Bamboo.Phoenix do
         assigns
       )
     end
-  else
-    defp render_html(_email, _template), do: raise_phoenix_required()
-
-    defp render_text(_email, _template), do: raise_phoenix_required()
-
-    defp raise_phoenix_required do
-      raise "phoenix is required to render views with Bamboo.Phoenix"
-    end
-  end
+  
+ 
 end
